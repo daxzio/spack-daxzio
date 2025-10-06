@@ -5,8 +5,10 @@
 
 from spack.package import *
 
+from spack_repo.builtin.build_systems.cargo import CargoPackage
 
-class Radicle(Package):
+
+class Radicle(CargoPackage):
     """Radicle Heartwood Protocol & Stack
 
     Heartwood is the third iteration of the Radicle Protocol, a powerful 
@@ -28,23 +30,19 @@ class Radicle(Package):
 
     version("master", branch="master")
     version("1.2.1", commit="29043134a361aa8931cd069a1c72e3d2e8deae97")
-#     version("1.0.0 commit="d56d619f")
-#     version("1.0.0-rc.9", commit="d56d619f")
-#     version("1.0.0-rc.8", commit="0d880e12")
-#     version("1.0.0-rc.7", commit="9cd08a01")
-#     version("1.0.0-rc.6", commit="7126d051")
-#     version("1.0.0-rc.5", commit="c6076196")
-#     version("1.0.0-rc.4", commit="35567583")
-#     version("1.0.0-rc.3", commit="bd8e0ebc")
-#     version("1.0.0-rc.2", commit="ea69168f")
-    version("0.8.0", commit="f15afa8")
 
-    depends_on("git", type="run")
-    depends_on("openssh", type="run")
-    depends_on("rust", type="build")
 
-    def install(self, spec, prefix):
-        cargo = which("cargo")
-        cargo("install", "--root", prefix, "--path", "crates/radicle-cli",  "--force", "--locked")
-        cargo("install", "--root", prefix, "--path", "crates/radicle-node",  "--force", "--locked")
-        cargo("install", "--root", prefix, "--path", "crates/radicle-remote-helper",  "--force", "--locked")
+    def build(self, spec, prefix):
+        cargo("install", "--root", "out", "--path", "crates/radicle-cli")
+        cargo("install", "--root", "out", "--path", "crates/radicle-node")
+        cargo("install", "--root", "out", "--path", "crates/radicle-remote-helper")
+#         cargo("install", "--path", "crates/radicle-node",  "--force", "--locked")
+#         cargo("install", "--root", prefix, "--path", "crates/radicle-remote-helper",  "--force", "--locked")
+
+#     def build(self, spec, prefix):
+#         # The carogopackage installer doesn't allow for an option to install from a subdir
+#         # see: https://github.com/rust-lang/cargo/issues/7599
+#         cargo("install", "--root", prefix, "--path", "crates/radicle-cli",  "--force", "--locked")
+#         cargo("install", "--root", prefix, "--path", "crates/radicle-node",  "--force", "--locked")
+#         cargo("install", "--root", prefix, "--path", "crates/radicle-remote-helper",  "--force", "--locked")
+#         cargo("install", "--root", "out", "bindgen-cli")

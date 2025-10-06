@@ -16,6 +16,11 @@ class ArmGnuToolchain(Package):
     maintainers("davekeeshan")
 
     version(
+        "14.3.rel1",
+        url="https://developer.arm.com/-/media/Files/downloads/gnu/14.3.rel1/binrel/arm-gnu-toolchain-14.3.rel1-x86_64-arm-none-eabi.tar.xz",
+        sha256="8f6903f8ceb084d9227b9ef991490413014d991874a1e34074443c2a72b14dbd",
+    )
+    version(
         "14.2.rel1",
         url="https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz",
         sha256="62a63b981fe391a9cbad7ef51b17e49aeaa3e7b0d029b36ca1e9c3b2a9b78823",
