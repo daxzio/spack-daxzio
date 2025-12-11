@@ -16,4 +16,5 @@ class Stack(Package):
     )
 
     def install(self, spec, prefix):
-        install_tree(".", prefix)
+        mkdirp(prefix.bin)
+        install("stack", prefix.bin)
