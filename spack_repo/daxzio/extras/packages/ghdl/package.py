@@ -21,7 +21,7 @@ class Ghdl(AutotoolsPackage):
     
     version(
         "5.1.1", 
-        sha256="0aac531b45a6613b0918f3ac6ec717b8acfad051d1abb1c39eb7490590c7a324", 
+        sha256="00cd58ec8f25e2532465aabc8705f43071f20dc1d13e03fd9dc235523186fca9", 
         url = "https://github.com/ghdl/ghdl/archive/refs/tags/v5.1.1.tar.gz"
     )
     version(
