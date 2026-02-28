@@ -22,6 +22,7 @@ class Openocd(AutotoolsPackage):
 
     version("master", branch="master")
 
+    version("2026.02.15", commit="129e9d30055e5cbed5ad6f0229772a3dc89fa529")
     version("2025.07.29", commit="6872f7e406ad74f366f55947d23becd5a5faca15")
     version("2025.05.09", commit="744955e5b4f4f943c187622f4ae977bc4cd6fdb7")
     version("2025.03.01", commit="a168c634126e9e6bb95c6e68b2db5afbb099abf7")
