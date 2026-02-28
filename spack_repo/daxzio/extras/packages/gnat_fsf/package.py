@@ -85,13 +85,20 @@ class GnatFsf(Package):
     def url_for_version(self, version):
         if self.os_name not in ("linux", "darwin"):
             return None
-        if self.os_name not in self.gnat_filenames or self.target not in self.gnat_filenames[self.os_name]:
+        if (
+            self.os_name not in self.gnat_filenames
+            or self.target not in self.gnat_filenames[self.os_name]
+        ):
             return None
         releases = getattr(self, "gnat_releases", {})
         if str(version) not in releases:
             return None
         platforms = releases[str(version)]
-        if self.os_name not in platforms or self.target not in platforms[self.os_name] or not platforms[self.os_name][self.target]:
+        if (
+            self.os_name not in platforms
+            or self.target not in platforms[self.os_name]
+            or not platforms[self.os_name][self.target]
+        ):
             return None
         suffix = self.gnat_filenames[self.os_name][self.target]
         ver_str = str(version)
