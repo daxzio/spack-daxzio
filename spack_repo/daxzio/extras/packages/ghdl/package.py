@@ -53,6 +53,6 @@ class Ghdl(AutotoolsPackage):
     def configure_args(self):
         args = []
         if self.spec.satisfies("+llvm"):
-            args.append("--with-llvm-config")
-
+            llvm_config = self.spec["llvm"].prefix.bin.join("llvm-config")
+            args.append(f"--with-llvm-config={llvm_config}")
         return args
