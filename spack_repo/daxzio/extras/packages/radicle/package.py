@@ -11,13 +11,13 @@ from spack_repo.builtin.build_systems.cargo import CargoPackage
 class Radicle(CargoPackage):
     """Radicle Heartwood Protocol & Stack
 
-    Heartwood is the third iteration of the Radicle Protocol, a powerful 
-    peer-to-peer code collaboration and publishing stack. The repository contains 
-    a full implemention of Heartwood, complete with a user-friendly command-line 
+    Heartwood is the third iteration of the Radicle Protocol, a powerful
+    peer-to-peer code collaboration and publishing stack. The repository contains
+    a full implemention of Heartwood, complete with a user-friendly command-line
     interface (rad) and network daemon (radicle-node).
 
-    Radicle was designed to be a secure, decentralized and powerful alternative 
-    to code forges such as GitHub and GitLab that preserves user sovereignty 
+    Radicle was designed to be a secure, decentralized and powerful alternative
+    to code forges such as GitHub and GitLab that preserves user sovereignty
     and freedom.
     """
 
@@ -31,11 +31,12 @@ class Radicle(CargoPackage):
     version("master", branch="master")
     version("1.2.1", commit="29043134a361aa8931cd069a1c72e3d2e8deae97")
 
-
     def build(self, spec, prefix):
         cargo("install", "--root", "out", "--path", "crates/radicle-cli")
         cargo("install", "--root", "out", "--path", "crates/radicle-node")
         cargo("install", "--root", "out", "--path", "crates/radicle-remote-helper")
+
+
 #         cargo("install", "--path", "crates/radicle-node",  "--force", "--locked")
 #         cargo("install", "--root", prefix, "--path", "crates/radicle-remote-helper",  "--force", "--locked")
 

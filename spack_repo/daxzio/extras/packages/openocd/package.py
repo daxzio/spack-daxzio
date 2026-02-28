@@ -7,6 +7,7 @@ from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
 
 from spack.package import *
 
+
 class Openocd(AutotoolsPackage):
     """The Open On-Chip Debugger (OpenOCD) aims to provide debugging, in-system
     programming and boundary-scan testing for embedded target devices.
@@ -26,13 +27,19 @@ class Openocd(AutotoolsPackage):
     version("2025.07.29", commit="6872f7e406ad74f366f55947d23becd5a5faca15")
     version("2025.05.09", commit="744955e5b4f4f943c187622f4ae977bc4cd6fdb7")
     version("2025.03.01", commit="a168c634126e9e6bb95c6e68b2db5afbb099abf7")
-    version("2025.01.09", commit="d4b3b4ea82ba6d34b050a1cc068e0b105533e2f2", submodules=True)
-    version("0.12.0", commit="9ea7f3d647c8ecf6b0f1424002dfc3f4504a162c", submodules=True)
+    version(
+        "2025.01.09", commit="d4b3b4ea82ba6d34b050a1cc068e0b105533e2f2", submodules=True
+    )
+    version(
+        "0.12.0", commit="9ea7f3d647c8ecf6b0f1424002dfc3f4504a162c", submodules=True
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
 
-    variant("remotebitbang", default=True, description="build with remote bitbang support")
+    variant(
+        "remotebitbang", default=True, description="build with remote bitbang support"
+    )
     variant("ftdi", default=True, description="build with ftdi support")
     variant("linuxgpiod", default=True, description="build with linux gpio support")
     variant("bcm2835gpio", default=True, description="build with bcm2835gpio support")

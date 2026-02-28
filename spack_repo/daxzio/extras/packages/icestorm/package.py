@@ -7,10 +7,11 @@ from spack.package import *
 
 from spack_repo.builtin.build_systems.makefile import MakefilePackage
 
+
 class Icestorm(MakefilePackage):
     """Project IceStorm aims at documenting the bitstream format of Lattice iCE40
-    
-    FPGAs and providing simple tools for analyzing and creating bitstream files. 
+
+    FPGAs and providing simple tools for analyzing and creating bitstream files.
     """
 
     homepage = "https://github.com/YosysHQ/icestorm"

@@ -23,17 +23,31 @@ class RiscvOpenocd(AutotoolsPackage):
 
     version("master", branch="master", submodules=True)
 
-    version("2025.06.12", commit="5a39519f39501552e98fa2fe4cbfea2276d55e9f", submodules=True)
-    version("2025.03.31", commit="2605cbd73c36998e76d32cded95a02b424870626", submodules=True)
-    version("2025.03.02", commit="67082829da364ad042eea12a455450d707ea4d57", submodules=True)
-    version("2025.01.29", commit="5de7310881c18a50797e8d96cf6d3f3aeb2aa4d0", submodules=True)
-    version("2024.11.21", commit="1bf7efb2d5be792116bad3d0d7cfb812228d18ea", submodules=True)
-    version("2018.12.0", commit="c3c76bfafa6612dc56b3914c9f93eb2a790ef87b", submodules=True)
+    version(
+        "2025.06.12", commit="5a39519f39501552e98fa2fe4cbfea2276d55e9f", submodules=True
+    )
+    version(
+        "2025.03.31", commit="2605cbd73c36998e76d32cded95a02b424870626", submodules=True
+    )
+    version(
+        "2025.03.02", commit="67082829da364ad042eea12a455450d707ea4d57", submodules=True
+    )
+    version(
+        "2025.01.29", commit="5de7310881c18a50797e8d96cf6d3f3aeb2aa4d0", submodules=True
+    )
+    version(
+        "2024.11.21", commit="1bf7efb2d5be792116bad3d0d7cfb812228d18ea", submodules=True
+    )
+    version(
+        "2018.12.0", commit="c3c76bfafa6612dc56b3914c9f93eb2a790ef87b", submodules=True
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
 
-    variant("remotebitbang", default=True, description="build with remote bitbang support")
+    variant(
+        "remotebitbang", default=True, description="build with remote bitbang support"
+    )
     variant("ftdi", default=True, description="build with ftdi support")
     variant("linuxgpiod", default=True, description="build with linux gpio support")
     variant("bcm2835gpio", default=True, description="build with bcm2835gpio support")

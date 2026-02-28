@@ -38,6 +38,6 @@ class GnatFsf(Package):
         sha256="11f3b811e4967bd4924a8236e9e68e0b9464fee016cd9d00c077faec0c27fe99",
         url="https://github.com/alire-project/GNAT-FSF-builds/releases/download/gnat-12.2.0-1/gnat-x86_64-linux-12.2.0-1.tar.gz",
     )
-    
+
     def install(self, spec, prefix):
         install_tree(".", prefix)

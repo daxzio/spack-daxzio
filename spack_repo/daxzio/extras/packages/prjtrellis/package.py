@@ -7,11 +7,12 @@ from spack.package import *
 
 from spack_repo.builtin.build_systems.cmake import CMakePackage
 
+
 class Prjtrellis(CMakePackage):
-    """Project Trellis enables a fully open-source flow for ECP5 FPGAs using 
-    Yosys for Verilog synthesis and nextpnr for place and route. Project 
-    Trellis itself provides the device database and tools for bitstream 
-    creation. 
+    """Project Trellis enables a fully open-source flow for ECP5 FPGAs using
+    Yosys for Verilog synthesis and nextpnr for place and route. Project
+    Trellis itself provides the device database and tools for bitstream
+    creation.
     """
 
     homepage = "https://github.com/YosysHQ/prjtrellis"
@@ -22,5 +23,6 @@ class Prjtrellis(CMakePackage):
     license("ISC")
 
     version("master", branch="master", submodules=True)
+
 
 #     def build(self, pkg, spec, prefix):
