@@ -1,0 +1,14 @@
+# Packages to skip when running spack checksum (one per line).
+# Packages that use only git commits, custom URLs, or don't support checksum
+# can be listed here.
+#
+# Examples:
+# arm-gnu-toolchain
+# stack
+# ghc-bootstrap
+nextpnr-xilinx
+prjxray
+prjxray-db
+py-fasm
+py-pyjson5
+fast-double-parser
